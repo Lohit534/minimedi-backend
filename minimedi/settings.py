@@ -37,6 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'users',
+    'aicheck'
+    'rest_framework',
+    'corsheaders',
+    
 ]
 
 MIDDLEWARE = [
@@ -47,6 +52,16 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+]
+
+SECRET_KEY = "My-Key"  # 🔒 Replace with your real secret key
+DEBUG = True  # Set to False in production
+ALLOWED_HOSTS = ["*"]
+
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",  
 ]
 
 ROOT_URLCONF = 'minimedi.urls'
